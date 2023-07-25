@@ -32,12 +32,14 @@ def upload_file():
         for file in files:
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
 
+        #extracting metadata
         folder='uploads'
         data=extract_content_metadata(folder)
 
         content=data[0]
         metadata=data[1]
 
+        #inserting into MongoDB and indexing
         insert_and_index(content, metadata)
 
         #deleting upload
