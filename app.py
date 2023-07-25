@@ -1,6 +1,5 @@
 import os
-from flask import Flask, flash, request, redirect, render_template
-from werkzeug.utils import secure_filename
+from flask import Flask, request,render_template
 from extract_metadata import extract_content_metadata
 from database import insert_and_index
 import shutil
@@ -12,7 +11,7 @@ path = os.getcwd()
 # file Upload
 UPLOAD_FOLDER = os.path.join(path, 'uploads')
 
-# Make directory if uploads is not exists
+# Make directory if uploads does not exists
 if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 
@@ -48,8 +47,6 @@ def upload_file():
             print(f"Error: {e}")
 
         return "<h1>Files Uploaded Successfully.!</h1>"
-
-
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=5000,debug=False,threaded=True)
