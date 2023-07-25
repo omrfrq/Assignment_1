@@ -3,7 +3,6 @@ from flask import Flask, flash, request, redirect, render_template
 from werkzeug.utils import secure_filename
 from extract_metadata import extract_content_metadata
 from database import insert_and_index
-from query_data import search_documents
 import shutil
 
 app=Flask(__name__)
