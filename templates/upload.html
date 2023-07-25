@@ -1,24 +1,11 @@
-<!doctype html>
-<title>app</title>
-<h2>Select files to upload</h2>
-<p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul class=flashes>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
-</p>
-<form method="post" action="/" enctype="multipart/form-data">
-    <dl>
-		<p>
-			<input type="file" name="files[]" multiple="true" autocomplete="off" required>
-		</p>
-    </dl>
-    <p>
-		<input type="submit" value="Submit">
-	</p>
-</form>
+<html>
+<head>
+    <title>Upload Multiple files : GFG</title>
+</head>
+<body>
+    <form action = "/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" multiple />
+        <input type = "submit" value="Upload">
+    </form>
+</body>
+</html>
