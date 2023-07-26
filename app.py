@@ -8,6 +8,7 @@ app=Flask(__name__)
 
 # Get current path
 path = os.getcwd()
+
 # file Upload
 UPLOAD = os.path.join(path, 'uploads')
 UPLOAD_FOLDER = os.path.join(path, 'files')
