@@ -23,7 +23,7 @@ def insert_and_index(content, metadata):
         collection.insert_one(data)
 
     collection.create_index("filename") 
-    collection.create_index("content")   
+    collection.create_index([("content","text")])  
     collection.create_index("metadata")
 
 
